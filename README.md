@@ -48,7 +48,7 @@ O projeto foi refatorado para cumprir as diretrizes internacionais das **WCAG (W
 
 1. **Clonar o repositório:**
    ```bash
-   git clone <URL_DO_TEU_REPOSITORIO>
+   git clone <https://github.com/brmoitinho/livraria-online-2>
    cd projeto_parada_2_full_stack
    ```
 
