@@ -9,13 +9,26 @@ const ProductList = ({ products }) => {
   };
 
   return (
-    <div>
-      {products.map(product => (
-        <div key={product.id}>
-          <h2>{product.name}</h2>
-          <button onClick={() => addToCart(product)}>Add to Cart</button>
-        </div>
-      ))}
+    <div style={{ padding: '20px', fontFamily: 'Arial, sans-serif' }}>
+      <h2>Catálogo de Livros</h2>
+      <div style={{ display: 'flex', gap: '20px', flexWrap: 'wrap' }}>
+        {products && products.map(product => (
+          <div key={product.id} style={{ border: '1px solid #ccc', padding: '15px', borderRadius: '8px', width: '220px', backgroundColor: '#fff' }}>
+            <img 
+              src={product.image} 
+              alt={`Capa do livro ${product.name}`} 
+              style={{ width: '100%', height: '180px', objectFit: 'cover', borderRadius: '4px', marginBottom: '10px' }}
+            />
+            <h3 style={{ fontSize: '16px', margin: '10px 0' }}>{product.name}</h3>
+            <button 
+              onClick={() => addToCart(product)} 
+              style={{ padding: '8px 12px', cursor: 'pointer', backgroundColor: '#0066cc', color: '#fff', border: 'none', borderRadius: '4px' }}
+            >
+              Adicionar ao Carrinho
+            </button>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
