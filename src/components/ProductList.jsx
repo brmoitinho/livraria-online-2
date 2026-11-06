@@ -10,21 +10,32 @@ const ProductList = ({ products }) => {
 
   return (
     <div style={{ padding: '20px', fontFamily: 'Arial, sans-serif' }}>
-      {/* Cabeçalho principal da página/secção utilizando H1 */}
       <h1>Catálogo de Livros</h1>
       <div style={{ display: 'flex', gap: '20px', flexWrap: 'wrap' }}>
         {products && products.map(product => (
-          <div key={product.id} style={{ border: '1px solid #ccc', padding: '15px', borderRadius: '8px', width: '220px', backgroundColor: '#fff' }}>
+          <div 
+            key={product.id} 
+            style={{ border: '1px solid #ccc', padding: '15px', borderRadius: '8px', width: '220px', backgroundColor: '#fff' }}
+          >
             <img 
               src={product.image} 
               alt={`Capa do livro ${product.name}`} 
               style={{ width: '100%', height: '180px', objectFit: 'cover', borderRadius: '4px', marginBottom: '10px' }}
             />
-            {/* Subtítulo do item utilizando H2 mantendo a hierarquia lógica */}
             <h2 style={{ fontSize: '16px', margin: '10px 0' }}>{product.name}</h2>
+            
+            {/* Botão interativo otimizado para navegação por teclado */}
             <button 
+              tabIndex="0"
               onClick={() => addToCart(product)} 
-              style={{ padding: '8px 12px', cursor: 'pointer', backgroundColor: '#0066cc', color: '#fff', border: 'none', borderRadius: '4px' }}
+              style={{ 
+                padding: '8px 12px', 
+                cursor: 'pointer', 
+                backgroundColor: '#0066cc', 
+                color: '#fff', 
+                border: 'none', 
+                borderRadius: '4px' 
+              }}
             >
               Adicionar ao Carrinho
             </button>
